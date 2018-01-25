@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import { Card, Button } from 'react-native-elements';
 import Deck from './src/Deck';
-
+//our dataset - hardcoded array
 const DATA = [
   { id: 1, text: 'Card #1', uri: 'http://imgs.abduzeedo.com/files/paul0v2/unsplash/unsplash-04.jpg' },
   { id: 2, text: 'Card #2', uri: 'http://www.fluxdigital.co/wp-content/uploads/2015/04/Unsplash.jpg' },
@@ -15,6 +15,8 @@ const DATA = [
 ];
 
 export default class App extends React.Component {
+//renderCard function, item as a parameter
+//item is an object from the data array
 
   renderCard(item) {
     return (
@@ -33,7 +35,7 @@ export default class App extends React.Component {
       </Card>
     );
   }
-
+//function to display text when there are no more cards to show
   renderNoMoreCards() {
     return (
       <Card title="All Done">
@@ -48,7 +50,8 @@ export default class App extends React.Component {
 
     );
   }
-
+// render function of the App.js component
+// renders a Deck component, with props the 2 functions above, and the dataset
   render() {
     return (
       <View style={styles.container}>
